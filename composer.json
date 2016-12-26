@@ -1,0 +1,26 @@
+{
+  "name": "omcrn/yii2-base",
+  "description": "Helpers, Behaviors and other component classes",
+  "keywords": [
+    "yii2",
+    "yii2 extension",
+    "yii2 helpers"
+  ],
+  "authors": [
+    {
+      "name": "Zura Sekhniashvili",
+      "email": "zurasekhniashvili@gmail.com",
+      "homepage": "http://zuse.me",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "~2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "centigen\\base\\": ""
+    }
+  }
+}

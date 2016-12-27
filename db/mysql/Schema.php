@@ -13,7 +13,7 @@ use centigen\base\db\Connection;
  * Class Schema
  *
  * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
- * @package vendor\centigen\base\db\mysql
+ * @package centigen\base\db\mysql
  */
 class Schema extends \yii\db\mysql\Schema
 {

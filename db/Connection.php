@@ -12,7 +12,7 @@ namespace centigen\base\db;
  * Class Connection
  *
  * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
- * @package vendor\centigen\base\db
+ * @package centigen\base\db
  */
 class Connection extends \yii\db\Connection
 {

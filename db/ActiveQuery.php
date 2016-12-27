@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
  * Class ActiveQuery
  *
  * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
- * @package vendor\centigen\base\db
+ * @package centigen\base\db
  */
 class ActiveQuery extends \yii\db\ActiveQuery
 {

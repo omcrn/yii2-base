@@ -18,11 +18,19 @@ use yii\bootstrap\Html;
  */
 class Formatter extends \yii\i18n\Formatter
 {
-    public function asStatusLabel($status)
+    /**
+     * Return bootstrap <span class="label"></span> with class `label-success` or `label-danger`
+     * depending on $value param
+     *
+     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+     * @param $value
+     * @return string
+     */
+    public function asStatusLabel($value)
     {
-        if ($status){
-            return Html::tag('span', \Yii::t('omcrnActive', "Active"), ['label label-success']);
+        if ($value){
+            return Html::tag('span', \Yii::t('omcrnActive', "Active"), ['class' => 'label label-success']);
         }
-        return Html::tag('span', \Yii::t('omcrnActive', "Inactive"), ['label label-danger']);
+        return Html::tag('span', \Yii::t('omcrnActive', "Inactive"), ['class' => 'label label-danger']);
     }
 }

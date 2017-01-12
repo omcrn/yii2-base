@@ -5,7 +5,7 @@
  * Time: 12:23 PM
  */
 
-namespace centigen\base\component\i18n;
+namespace centigen\base\i18n;
 
 use yii\bootstrap\Html;
 

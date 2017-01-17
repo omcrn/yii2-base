@@ -33,4 +33,23 @@ class Formatter extends \yii\i18n\Formatter
         }
         return Html::tag('span', \Yii::t('omcrnActive', "Inactive"), ['class' => 'label label-danger']);
     }
+
+    /**
+     * @param $value
+     * @param bool $disabled
+     * @return string
+     */
+    public function asToggle($value, $disabled = false)
+    {
+        if ($value === null) {
+            return "";
+        }
+        $div = '<div class="togglebutton">
+                  <label>
+                    <input type="checkbox"' . ($value ? ' checked' : '') . ($disabled ? ' disabled' : '') . '>
+                    <span class="toggle"></span>
+                  </label>
+                </div>';
+        return $div;
+    }
 }

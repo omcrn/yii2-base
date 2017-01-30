@@ -6,7 +6,6 @@
  */
 
 namespace centigen\base\helpers;
-use DateTime;
 use Yii;
 use yii\db\Exception;
 
@@ -76,7 +75,7 @@ class DateHelper
     {
         $datetime = \DateTime::createFromFormat($format, $dateString);
         if (!$datetime){
-            throw new Exception('Unable to parse date: '.$dateString.', using format: '.$format);
+            throw new \InvalidArgumentException('Unable to parse date: '.$dateString.', using format: '.$format);
         }
         if ($timezone !== null){
             if ($dateStringTimezone === null){

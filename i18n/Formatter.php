@@ -20,14 +20,22 @@ use yii\helpers\ArrayHelper;
 class Formatter extends \yii\i18n\Formatter
 {
     public $yiiFormatToMomentMapping = [
-        //      php intl      -       momentjs
         'php:d F Y' => 'DD MMMM YYYY',
         'php:d M Y' => 'DD MMM YYYY',
+        'd/MM/YYYY HH:mm' => 'j/m/Y H:i',
+        'MM/d/YYYY HH:mm' => 'm/j/Y H:i',
+        'd/M/YYYY HH:mm' => 'j/n/Y H:i',
+        'M/d/YYYY HH:mm' => 'n/j/Y H:i',
+        'dd/MM/YYYY HH:mm' => 'd/m/Y H:i',
+        'MM/DD/YYYY HH:mm' => 'm/d/Y H:i'
     ];
 
     public $yiiFormatToPhpMapping = [
-        //     intl    -        php
-        'DD/MM/YYYY HH:mm' => 'd/m/Y H:i',
+        'd/MM/YYYY HH:mm' => 'j/m/Y H:i',
+        'MM/d/YYYY HH:mm' => 'm/j/Y H:i',
+        'd/M/YYYY HH:mm' => 'j/n/Y H:i',
+        'M/d/YYYY HH:mm' => 'n/j/Y H:i',
+        'dd/MM/YYYY HH:mm' => 'd/m/Y H:i',
         'MM/DD/YYYY HH:mm' => 'm/d/Y H:i'
     ];
 

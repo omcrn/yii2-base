@@ -22,12 +22,12 @@ class Formatter extends \yii\i18n\Formatter
     public $yiiFormatToMomentMapping = [
         'php:d F Y' => 'DD MMMM YYYY',
         'php:d M Y' => 'DD MMM YYYY',
-        'd/MM/YYYY HH:mm' => 'j/m/Y H:i',
-        'MM/d/YYYY HH:mm' => 'm/j/Y H:i',
-        'd/M/YYYY HH:mm' => 'j/n/Y H:i',
-        'M/d/YYYY HH:mm' => 'n/j/Y H:i',
-        'dd/MM/YYYY HH:mm' => 'd/m/Y H:i',
-        'MM/DD/YYYY HH:mm' => 'm/d/Y H:i'
+        'd/MM/YYYY HH:mm' => 'D/MM/YYYY HH:mm',
+        'MM/d/YYYY HH:mm' => 'MM/D/YYYY HH:mm',
+        'd/M/YYYY HH:mm' => 'D/M/YYYY HH:mm',
+        'M/d/YYYY HH:mm' => 'M/D/YYYY HH:mm',
+        'dd/MM/YYYY HH:mm' => 'DD/MM/YYYY HH:mm',
+        'MM/DD/YYYY HH:mm' => 'MM/DD/YYYY HH:mm'
     ];
 
     public $yiiFormatToPhpMapping = [
@@ -110,6 +110,7 @@ class Formatter extends \yii\i18n\Formatter
      */
     public function getMomentDatetimeFormat()
     {
+        \centigen\base\helpers\UtilHelper::vardump(\Yii::$app->formatter->datetimeFormat);
         return $this->getMomentFormat(\Yii::$app->formatter->datetimeFormat);
     }
 

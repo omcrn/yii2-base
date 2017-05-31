@@ -67,7 +67,7 @@ class Formatter extends \yii\i18n\Formatter
         }
         $div = '<div class="togglebutton">
                   <label>
-                    <input type="checkbox"' . ($value ? ' checked' : '') . ($disabled ? ' disabled' : '') . '>
+                    <input type="checkbox" ' . ($value ? 'checked' : '') . ($disabled ? 'disabled' : '') . '>
                     <span class="toggle"></span>
                   </label>
                 </div>';
@@ -110,7 +110,6 @@ class Formatter extends \yii\i18n\Formatter
      */
     public function getMomentDatetimeFormat()
     {
-        \centigen\base\helpers\UtilHelper::vardump(\Yii::$app->formatter->datetimeFormat);
         return $this->getMomentFormat(\Yii::$app->formatter->datetimeFormat);
     }
 

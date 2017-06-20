@@ -18,6 +18,26 @@ use yii\db\Exception;
  */
 class DateHelper
 {
+    public static $yiiFormatToMomentMapping = [
+        'php:d F Y' => 'DD MMMM YYYY',
+        'php:d M Y' => 'DD MMM YYYY',
+        'd/MM/YYYY HH:mm' => 'D/MM/YYYY HH:mm',
+        'MM/d/YYYY HH:mm' => 'MM/D/YYYY HH:mm',
+        'd/M/YYYY HH:mm' => 'D/M/YYYY HH:mm',
+        'M/d/YYYY HH:mm' => 'M/D/YYYY HH:mm',
+        'dd/MM/YYYY HH:mm' => 'DD/MM/YYYY HH:mm',
+        'MM/DD/YYYY HH:mm' => 'MM/DD/YYYY HH:mm'
+    ];
+
+    public static $yiiFormatToPhpMapping = [
+        'd/MM/YYYY HH:mm' => 'j/m/Y H:i',
+        'MM/d/YYYY HH:mm' => 'm/j/Y H:i',
+        'd/M/YYYY HH:mm' => 'j/n/Y H:i',
+        'M/d/YYYY HH:mm' => 'n/j/Y H:i',
+        'dd/MM/YYYY HH:mm' => 'd/m/Y H:i',
+        'MM/DD/YYYY HH:mm' => 'm/d/Y H:i'
+    ];
+    
     /**
     * @var integer
     */
@@ -314,5 +334,57 @@ class DateHelper
     public static function getDaysFromTimestamp($time)
     {
         return floor($time / 86400);
+    }
+    
+    
+
+    /**
+     * Get corresponding momentjs format fot given yii format
+     *
+     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+     * @param $format
+     * @return mixed
+     */
+    public static function getMomentFormat($format)
+    {
+        return \yii\helpers\ArrayHelper::getValue(self::$yiiFormatToMomentMapping, $format) ?: $format;
+    }
+
+    /**
+     * Get corresponding php format for given yii format
+     *
+     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+     * @param $format
+     * @return mixed
+     */
+    public static function getPhpFormat($format)
+    {
+        $format = \yii\helpers\ArrayHelper::getValue(self::$yiiFormatToPhpMapping, $format);
+        if (!$format && strpos($format, 'php:') === 0){
+            return str_replace('php:', '', $format);
+        }
+        return $format;
+    }
+
+    /**
+     * Get corresponding momentjs format for current `datetimeFormat`
+     *
+     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+     * @return mixed
+     */
+    public static function getMomentDatetimeFormat()
+    {
+        return self::getMomentFormat(\Yii::$app->formatter->datetimeFormat);
+    }
+
+    /**
+     * Get corresponding php datetime formar for current `datetimeFormat`
+     *
+     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+     * @return mixed
+     */
+    public static function getPhpDatetimeFormat()
+    {
+        return self::getPhpFormat(\Yii::$app->formatter->datetimeFormat);
     }
 }

@@ -50,7 +50,7 @@ class LocaleHelper
     {
         $locales = self::getAvailableLocales();
         foreach ($locales as $localeKey => $locale){
-            if (explode("-", $localeKey)[0] === explode("-", $key)[0]){
+            if (self::isEqual($key, $localeKey)){
                 return $locale;
             }
         }
@@ -59,6 +59,6 @@ class LocaleHelper
 
     public static function isEqual($locale1, $locale2)
     {
-        return explode("-", $locale1)[0] === explode("-", $locale2)[0];
+        return $locale1 === $locale2;
     }
 }

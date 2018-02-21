@@ -21,22 +21,22 @@ class DateHelper
     public static $yiiFormatToMomentMapping = [
         'php:d F Y' => 'DD MMMM YYYY',
         'php:d M Y' => 'DD MMM YYYY',
-        'd/MM/YYYY HH:mm' => 'D/MM/YYYY HH:mm',
-        'MM/d/YYYY HH:mm' => 'MM/D/YYYY HH:mm',
-        'd/M/YYYY HH:mm' => 'D/M/YYYY HH:mm',
-        'M/d/YYYY HH:mm' => 'M/D/YYYY HH:mm',
-        'dd/MM/YYYY HH:mm' => 'DD/MM/YYYY HH:mm',
+        'd/MM/yyyy HH:mm' => 'D/MM/YYYY HH:mm',
+        'MM/d/yyyy HH:mm' => 'MM/D/YYYY HH:mm',
+        'd/M/yyyy HH:mm' => 'D/M/YYYY HH:mm',
+        'M/d/yyyy HH:mm' => 'M/D/YYYY HH:mm',
         'dd/MM/yyyy HH:mm' => 'DD/MM/YYYY HH:mm',
-        'MM/DD/YYYY HH:mm' => 'MM/DD/YYYY HH:mm'
+        'MM/dd/yyyy HH:mm' => 'MM/DD/YYYY HH:mm'
     ];
 
     public static $yiiFormatToPhpMapping = [
-        'd/MM/YYYY HH:mm' => 'j/m/Y H:i',
-        'MM/d/YYYY HH:mm' => 'm/j/Y H:i',
-        'd/M/YYYY HH:mm' => 'j/n/Y H:i',
-        'M/d/YYYY HH:mm' => 'n/j/Y H:i',
-        'dd/MM/YYYY HH:mm' => 'd/m/Y H:i',
-        'MM/DD/YYYY HH:mm' => 'm/d/Y H:i'
+        'd/MM/yyyy HH:mm' => 'j/m/Y H:i',
+        'MM/d/yyyy HH:mm' => 'm/j/Y H:i',
+        'd/M/yyyy HH:mm' => 'j/n/Y H:i',
+        'M/d/yyyy HH:mm' => 'n/j/Y H:i',
+        'dd/MM/yyyy HH:mm' => 'd/m/Y H:i',
+        'dd/MM/yyyy' => 'd/m/Y',
+        'MM/dd/yyyy HH:mm' => 'm/d/Y H:i'
     ];
     
     /**

@@ -26,6 +26,7 @@ class DateHelper
         'd/M/YYYY HH:mm' => 'D/M/YYYY HH:mm',
         'M/d/YYYY HH:mm' => 'M/D/YYYY HH:mm',
         'dd/MM/YYYY HH:mm' => 'DD/MM/YYYY HH:mm',
+        'dd/MM/yyyy HH:mm' => 'DD/MM/YYYY HH:mm',
         'MM/DD/YYYY HH:mm' => 'MM/DD/YYYY HH:mm'
     ];
 
